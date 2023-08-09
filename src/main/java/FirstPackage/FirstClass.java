@@ -11,6 +11,8 @@ public class FirstClass
 	WebDriver driver = new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.navigate().to("https://google.com/");
-	
+	driver.navigate().back();
+	driver.navigate().forward();
+	driver.close();
 	}
 }
