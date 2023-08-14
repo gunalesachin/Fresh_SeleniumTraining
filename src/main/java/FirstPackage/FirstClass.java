@@ -1,16 +1,23 @@
 package FirstPackage;
 //TestClass
 
+import java.io.File;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.HasFullPageScreenshot;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 
 public class FirstClass 
 {
+	private static final String FileUtils = null;
+
 	public static void main(String[] args)
 	{
 	WebDriver driver = new ChromeDriver();
@@ -26,6 +33,13 @@ public class FirstClass
 	driver.findElement(By.xpath("//a[normalize-space()='PC (0)']")).click();
 	driver.findElement(By.xpath("//a[normalize-space()='Laptops & Notebooks (5)']")).click();
 	
+	TakesScreenshot screen = (TakesScreenshot)driver;
+	File srcFile = screen.getScreenshotAs(OutputType.FILE);
+	srcFile(srcFile, new File("C:\\SeleniumProject\\Fresh_SeleniumTraining\\ScreenShots\\FirstScreen.gif"));
+	
+	// //i[@class='fas fa-search'] - search button
+	// //input[@placeholder='Search']
+	
 	//WebElement Menu = driver.findElement((By.xpath("//a[normalize-space()='Desktops']")));
 	//WebElement MenuItem = driver.findElement(By.xpath("//a[normalize-space()='PC (0)']"));
 	//actions.moveToElement(Menu).click();
@@ -35,5 +49,10 @@ public class FirstClass
 	//driver.navigate().back();
 	//driver.navigate().forward();
 	//driver.close();
+	}
+
+	private static void srcFile(File srcFile, File file) {
+		// TODO Auto-generated method stub
+		
 	}
 }
