@@ -5,6 +5,7 @@ import java.io.File;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -49,6 +50,23 @@ public class FirstClass
 	//driver.navigate().back();
 	//driver.navigate().forward();
 	//driver.close();
+	
+	class ShadowDomTest
+	{
+		void main(String[] args)
+		{
+			WebDriver driver = new ChromeDriver();
+			driver.get("http://watir.com/examples/shadow_dom.html");
+			WebElement shadowHost = driver.findElement(
+					By.cssSelector("shadow_host"));
+			SearchContext shadowRoot = shadowHost.getShadowRoot();
+			String strTxt = shadowRoot.findElement(By.cssSelector("#shadow_content")).getText();
+			System.out.println("Text from ShadowDom..." +strTxt);
+		}
+		
+	}
+		
+	
 	}
 
 	private static void srcFile(File srcFile, File file) {
