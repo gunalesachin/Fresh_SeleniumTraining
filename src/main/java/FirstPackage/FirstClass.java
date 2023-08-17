@@ -18,7 +18,7 @@ import org.openqa.selenium.interactions.Actions;
 public class FirstClass 
 {
 	private static final String FileUtils = null;
-
+@Beforetest
 	public static void main(String[] args)
 	{
 	WebDriver driver = new ChromeDriver();
@@ -65,7 +65,8 @@ public class FirstClass
 		}
 		
 	}
-		
+	
+
 	
 	}
 
